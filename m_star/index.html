@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/css.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery.js"></script>
+    <title>Title</title>
+    <script>
+        /*计算网页根元素大小*/
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+</head>
+<body>
+    <ul class="mobile_star">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+<script>
+    $(function(){
+        $('.mobile_star li').click(function(){
+            $(this).addClass('star');
+            $(this).prevAll().attr('class',"star");
+            $(this).nextAll().attr('class',"");
+        });
+    })
+</script>
+</html>
